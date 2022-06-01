@@ -26,9 +26,81 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text("Home"),
         elevation: 0,
+        // toolbarHeight: 100,
+
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.notifications))
         ],
+        bottom: PreferredSize(
+            child: Container(
+                padding: const EdgeInsets.all(5.0),
+                margin: const EdgeInsets.only(bottom: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(10.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.circular(8.0), // <-- Radius
+                        ),
+                        primary: const Color(0xFFF4F4F4),
+                      ),
+                      child: Column(
+                        children: const [
+                          Image(
+                            image: AssetImage(
+                                "assets/images/icons/bloodRequest.png"),
+                            height: 35,
+                            width: 40.0,
+                          ),
+                          Text(
+                            "Request Blood",
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.black54,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Spacer(
+                      flex: 2,
+                    ),
+                    ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(10.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.circular(8.0), // <-- Radius
+                          ),
+                          primary: const Color(0xFFF4F4F4),
+                        ),
+                        child: Column(
+                          children: const [
+                            Image(
+                              image: AssetImage(
+                                  "assets/images/icons/bloodDonor.png"),
+                              height: 35,
+                              width: 40.0,
+                            ),
+                            Text(
+                              "Donate Blood",
+                              style: TextStyle(
+                                  fontSize: 15.0,
+                                  color: Colors.black54,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        )),
+                    const Spacer(),
+                  ],
+                )),
+            preferredSize: const Size.fromHeight(100.0)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -69,13 +141,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.home_sharp,
               ),
               label: "Home"),
-         
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.bloodtype_rounded,
               ),
               label: "Blood Bank"),
-       
           BottomNavigationBarItem(
               icon: Icon(Icons.account_circle), label: "Profile"),
         ],
