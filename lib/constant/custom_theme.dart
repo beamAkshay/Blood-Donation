@@ -8,14 +8,25 @@ class CustomTheme {
       unselectedWidgetColor: const Color(0xFF263238).withOpacity(0.5),
       disabledColor: const Color(0xFFA6A6A6),
       inputDecorationTheme: InputDecorationTheme(
-        floatingLabelStyle: TextStyle(
-          fontFamily: "Roboto",
-          color: const Color(0xFF000000).withOpacity(0.6),
-        ),
+        floatingLabelStyle:
+            MaterialStateTextStyle.resolveWith((Set<MaterialState> states) {
+          final Color color = states.contains(MaterialState.error)
+              ? lightThemeColorsScheme().error
+              : const Color(0xFF000000).withOpacity(0.6);
+          return TextStyle(
+            color: color,
+            fontFamily: "Roboto",
+          );
+        }),
         hintStyle: TextStyle(
           fontFamily: "Roboto",
           color: const Color(0xFF000000).withOpacity(0.6),
           fontSize: 16.0,
+        ),
+        errorStyle: TextStyle(
+          fontFamily: "Roboto",
+          color: lightThemeColorsScheme().error,
+          fontSize: 14.0,
         ),
         suffixStyle: TextStyle(
             fontFamily: "Roboto",
@@ -23,42 +34,39 @@ class CustomTheme {
             fontSize: 16.0),
         contentPadding:
             const EdgeInsets.symmetric(vertical: 10.0, horizontal: 12),
-        labelStyle: const TextStyle(
+        labelStyle: TextStyle(
+          fontFamily: "Roboto",
           fontSize: 16.0,
+          color: const Color(0xFF000000).withOpacity(0.6),
         ),
         enabledBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: const Color(0xFF000000).withOpacity(0.38)),
+            borderSide: BorderSide(color: lightThemeColorsScheme().outline),
             borderRadius: const BorderRadius.all(Radius.circular(10.0))),
         focusedBorder: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: const Color(0xFF000000).withOpacity(0.38)),
+            borderSide: BorderSide(color: lightThemeColorsScheme().outline),
             borderRadius: const BorderRadius.all(Radius.circular(10.0))),
         border: OutlineInputBorder(
-            borderSide:
-                BorderSide(color: const Color(0xFF000000).withOpacity(0.38)),
+            borderSide: BorderSide(color: lightThemeColorsScheme().outline),
             borderRadius: const BorderRadius.all(Radius.circular(10.0))),
       ),
       colorScheme: lightThemeColorsScheme(),
       textSelectionTheme:
           const TextSelectionThemeData(cursorColor: Colors.black),
 
-     
       //Theme for appbar
-      appBarTheme:  AppBarTheme(
-        backgroundColor:lightThemeColorsScheme().primary,
-          shadowColor: lightThemeColorsScheme().shadow,
+      appBarTheme: AppBarTheme(
+        backgroundColor: lightThemeColorsScheme().primary,
+        shadowColor: lightThemeColorsScheme().shadow,
         titleTextStyle: TextStyle(
             color: lightThemeColorsScheme().onPrimary,
             fontSize: 20.0,
             fontWeight: FontWeight.w600),
         iconTheme: IconThemeData(
-            color: lightThemeColorsScheme().onPrimary,
+          color: lightThemeColorsScheme().onPrimary,
           size: 25,
         ),
       ),
 
-    
       //Theme for all text data
       textTheme: TextTheme(
         bodyText1: const TextStyle(
@@ -102,13 +110,12 @@ class CustomTheme {
             fontFamily: "Inter"),
         headline2: TextStyle(
           fontFamily: "Roboto",
-          fontWeight: FontWeight.w600,
-          fontSize: 10.0,
-          color: const Color(0xFF000000).withOpacity(0.5),
+          fontSize: 16.0,  fontWeight: FontWeight.w500,
+          color: const Color(0xFF000000).withOpacity(0.6),
         ),
         headline3: const TextStyle(
-            overflow: TextOverflow.ellipsis,
-            height: 1.5,
+       
+            height: 1.2,
             fontSize: 14.0,
             fontFamily: "Roboto",
             fontWeight: FontWeight.w400,
@@ -197,7 +204,7 @@ class CustomTheme {
           const TextSelectionThemeData(cursorColor: Colors.white),
       //colorScheme for app
       colorScheme: darkThemeColorScheme(), //theme for appbar
-      appBarTheme:  AppBarTheme(
+      appBarTheme: AppBarTheme(
         backgroundColor: darkThemeColorScheme().primary,
         shadowColor: darkThemeColorScheme().shadow,
         titleTextStyle: TextStyle(
@@ -209,8 +216,6 @@ class CustomTheme {
           size: 25,
         ),
       ),
-
- 
 
       //This is text theme data
       textTheme: TextTheme(
@@ -255,13 +260,12 @@ class CustomTheme {
             fontFamily: "Inter"),
         headline2: const TextStyle(
           fontFamily: "Roboto",
-          fontWeight: FontWeight.w600,
-          fontSize: 10.0,
+          fontSize: 16.0,
           color: Color(0xFFD7D8DA),
         ),
         headline3: const TextStyle(
-            overflow: TextOverflow.ellipsis,
-            height: 1.5,
+            
+            height: 1.2,
             fontSize: 14.0,
             fontFamily: "Roboto",
             fontWeight: FontWeight.w400,
