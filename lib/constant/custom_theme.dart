@@ -69,11 +69,11 @@ class CustomTheme {
 
       //Theme for all text data
       textTheme: TextTheme(
-        bodyText1: const TextStyle(
+        bodyText1: TextStyle(
             fontFamily: "Roboto",
             fontWeight: FontWeight.bold,
             fontSize: 13.0,
-            color: Color(0xFF151522)),
+            color: const Color(0xFF151522).withOpacity(0.8)),
         bodyText2: const TextStyle(
             fontFamily: "Roboto",
             fontWeight: FontWeight.w300,
@@ -110,23 +110,25 @@ class CustomTheme {
             fontFamily: "Inter"),
         headline2: TextStyle(
           fontFamily: "Roboto",
-          fontSize: 16.0,  fontWeight: FontWeight.w500,
+          fontSize: 16.0,
+          fontWeight: FontWeight.w500,
           color: const Color(0xFF000000).withOpacity(0.6),
         ),
         headline3: const TextStyle(
-       
             height: 1.2,
             fontSize: 14.0,
             fontFamily: "Roboto",
             fontWeight: FontWeight.w400,
             color: Color(0xFF1A1A1A)),
-        headline4: TextStyle(
+        headline4: const TextStyle(
             fontFamily: "Roboto",
             fontWeight: FontWeight.w600,
             fontSize: 15.0,
-            color: const Color(0xFF000000).withOpacity(0.6)),
-        headline5: const TextStyle(
-            fontFamily: "Roboto", fontSize: 24, color: Color(0xFF000000)),
+            color: Color(0xFF000000)),
+        headline5: TextStyle(
+            fontFamily: "Roboto",
+            fontSize: 13,
+            color: const Color(0xFF000000).withOpacity(0.8)),
         headline6: const TextStyle(
             fontFamily: "Roboto", fontSize: 14, color: Color(0xFF000000)),
       ),
@@ -264,7 +266,6 @@ class CustomTheme {
           color: Color(0xFFD7D8DA),
         ),
         headline3: const TextStyle(
-            
             height: 1.2,
             fontSize: 14.0,
             fontFamily: "Roboto",
@@ -276,7 +277,7 @@ class CustomTheme {
             fontSize: 15.0,
             color: const Color(0xFFFFFFFF).withOpacity(0.6)),
         headline5: const TextStyle(
-            fontFamily: "Roboto", fontSize: 24, color: Color(0xFFD7D8DA)),
+            fontFamily: "Roboto", fontSize: 13, color: Color(0xFFD7D8DA)),
         headline6: const TextStyle(
             fontFamily: "Roboto", fontSize: 14, color: Color(0xFFD7D8DA)),
       ),

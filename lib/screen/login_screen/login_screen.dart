@@ -1,5 +1,5 @@
 import 'package:blood_donation/constant/size_config.dart';
-import 'package:blood_donation/screen/home_screen/home_screen.dart';
+import 'package:blood_donation/screen/home_screen/main_screen.dart';
 import 'package:blood_donation/screen/login_screen/components/header_text.dart';
 import 'package:blood_donation/screen/login_screen/components/login_screen_text_form_field.dart';
 import 'package:blood_donation/screen/login_screen/components/text_button_with_icon.dart';
@@ -16,11 +16,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _loginFormKey = GlobalKey<FormState>();
+  final loginFormKey = GlobalKey<FormState>();
 
-  TextEditingController _loginEmailContoller = TextEditingController();
+  TextEditingController loginEmailContoller = TextEditingController();
 
-  TextEditingController _loginPasswordController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPress: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return const HomeScreen();
+                        return const MainScreen();
                       }));
                     },
                   )),

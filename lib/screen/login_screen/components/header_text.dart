@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class HeaderText extends StatelessWidget {
-  const HeaderText({required this.header1,required this.header2});
+  const HeaderText({Key? key,required this.header1,required this.header2}):super(key: key);
   final String header1;
   final String header2;
 

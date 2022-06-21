@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../../constant/constant.dart';
+import '../../../../constant/constant.dart';
 
 class CourosalSliderIndicator extends StatelessWidget {
    CourosalSliderIndicator({

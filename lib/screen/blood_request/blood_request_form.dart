@@ -78,6 +78,15 @@ class _BloodRequestState extends State<BloodRequest> {
               SizedBox(
                 height: SizeConfig.blockSizeVertical! * 3,
               ),
+              const RequestTextFormField(
+                textInputType: TextInputType.name,
+                obscureText: false,
+                readOnly: true,
+                label: "Hospital Number",
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical! * 3,
+              ),
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
