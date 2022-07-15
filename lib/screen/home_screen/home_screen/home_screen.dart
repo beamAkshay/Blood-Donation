@@ -1,10 +1,10 @@
+import 'package:blood_donation/screen/home_screen/home_screen/components/image_slider_design.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constant/size_config.dart';
 import '../../blood_donate/blood_donation_request.dart';
 import '../../blood_request/blood_request_form.dart';
-import 'components/image_slider_design.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,16 +28,18 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.notifications))
           ],
-          expandedHeight:160,
+          expandedHeight: 180,
           flexibleSpace: FlexibleSpaceBar(
-            background: Container(
-                padding:  EdgeInsets.fromLTRB(0, SizeConfig.blockSizeVertical!*15, 0, 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Spacer(),
-                    FittedBox(
-                      child: ElevatedButton(
+            background: Center(
+              child: Container(
+                  height: 130,
+                  margin: const EdgeInsets.only(top: 70.0),
+                  padding: const EdgeInsets.fromLTRB(0, 30, 0, 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Spacer(),
+                      ElevatedButton(
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
@@ -54,12 +56,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Column(
                           children: const [
+                            Spacer(),
                             Image(
                               image: AssetImage(
                                   "assets/images/icons/bloodRequest.png"),
                               height: 35,
                               width: 40.0,
                             ),
+                            Spacer(),
                             Text(
                               "Request Blood",
                               style: TextStyle(
@@ -67,13 +71,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.black54,
                                   fontWeight: FontWeight.w500),
                             ),
+                            Spacer(),
                           ],
                         ),
                       ),
-                    ),
-                    const Spacer(),
-                    FittedBox(
-                      child: ElevatedButton(
+                      const Spacer(),
+                      ElevatedButton(
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
@@ -90,12 +93,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: Column(
                             children: const [
+                              Spacer(),
                               Image(
                                 image: AssetImage(
                                     "assets/images/icons/bloodDonor.png"),
                                 height: 35,
                                 width: 40.0,
                               ),
+                              Spacer(),
                               Text(
                                 "Donate Blood",
                                 style: TextStyle(
@@ -103,12 +108,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                     color: Colors.black54,
                                     fontWeight: FontWeight.w500),
                               ),
+                              Spacer(),
                             ],
                           )),
-                    ),
-                    const Spacer(),
-                  ],
-                )),
+                      const Spacer(),
+                    ],
+                  )),
+            ),
           ),
         ),
         SliverList(
@@ -126,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         CarouselSlider(
                           items: CourosalSliderIndicator.imageSliders,
                           options: CarouselOptions(
-                               autoPlay: true,
+                              autoPlay: true,
                               enlargeCenterPage: true,
                               aspectRatio: 2.0,
                               onPageChanged: (index, reason) {
@@ -148,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child:Text(
+                  child: Text(
                     "Blood Camp",
                     style: Theme.of(context)
                         .textTheme
@@ -157,10 +163,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 SizedBox(
-                
                   height: 240,
                   child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
+                      physics: const BouncingScrollPhysics(),
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: 5,
@@ -169,10 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           elevation: 5,
                           shadowColor: Theme.of(context).colorScheme.shadow,
                           margin: const EdgeInsets.only(
-                              top: 10.0,
-                              bottom: 10.0,
-                              left: 15,
-                              right: 15),
+                              top: 10.0, bottom: 5.0, left: 15, right: 15),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0),
                           ),
@@ -196,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: SizeConfig.blockSizeVertical! * 2,
                                 ),
                                 SizedBox(
-                                  width: SizeConfig.blockSizeHorizontal!*80,
+                                  width: SizeConfig.blockSizeHorizontal! * 80,
                                   child: Row(
                                     children: [
                                       Flexible(
@@ -330,8 +332,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-          
-      SizedBox(height: 100,)
+            const SizedBox(
+              height: 100,
+            )
           ]),
         ),
       ],

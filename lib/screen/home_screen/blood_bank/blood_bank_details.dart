@@ -15,6 +15,7 @@ class _BloodBankDetailsState extends State<BloodBankDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
+        top: true,
         child: CustomScrollView(
           physics:const BouncingScrollPhysics(),
           slivers: [
